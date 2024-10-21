@@ -10,6 +10,7 @@
     --padding-form: 2.1rem 1.4rem;
     --color-primary: #3AACCE;
     --field-height: 2.3rem;
+    --color-border: rgba(194, 191, 191, 0.644);
 }
 body{
     box-sizing: border-box;

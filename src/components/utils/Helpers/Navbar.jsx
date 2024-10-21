@@ -18,7 +18,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <Link to="/"><i>eCommerce</i></Link>
+          <Link to="/" className='select-none'><i>eCommerce</i></Link>
         </div>
 
         {/* Center Menu */}
