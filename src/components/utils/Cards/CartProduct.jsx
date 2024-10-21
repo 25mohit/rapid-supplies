@@ -31,7 +31,7 @@ const CartProduct = () => {
                 </div>
             </div>
         </section>
-        <section className='mr-2 text-sm flex flex-col justify-between w-full md:w-fit gap-4 sm:gap-4'>
+        <section className='mr-2 text-sm flex flex-col items-center justify-between w-full md:w-fit gap-4 sm:gap-4'>
             <div className='flex flex-col gap-2'>
                 <span title='Order id' className='text-gray-400'>ORDER # 403-4017630-9343536</span>
                 <div className='flex justify-between'>
