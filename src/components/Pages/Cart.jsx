@@ -8,10 +8,10 @@ const Cart = () => {
     
   return (
     <Section>
-      <div className="header my-8">
+      <div className="header">
         <h1 className='heading'>Cart</h1>
       </div>
-      <div className="items-container flex flex-col gap-7">
+      <div className="items-container my-7 flex flex-col gap-7">
         <CartProduct />
         <CartProduct />
         <CartProduct />

@@ -9,6 +9,12 @@ export const SignInUser = createAsyncThunk("SignInUser", async (payload, { dispa
    return response
 })
 
+export const AddItemToCart = createAsyncThunk("SignInUser", async (payload, { dispatch }) => {
+    alert("Added")
+
+   return payload
+})
+
 const CartSlice = createSlice({
     name: "cart",
     initialState: {
@@ -16,7 +22,7 @@ const CartSlice = createSlice({
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(SignInUser.fulfilled, (state, action) => {
+        builder.addCase(AddItemToCart.fulfilled, (state, action) => {
             const payload = action.payload
             state.cartList = payload;
         })

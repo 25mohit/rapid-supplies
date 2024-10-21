@@ -23,14 +23,14 @@ export default function Navbar() {
 
         {/* Center Menu */}
         <div className="hidden md:flex space-x-8 text-md">
-          <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">Home</Link>
-          <Link to="list" className="cursor-pointer hover:text-gray-400 transition duration-300">List</Link>
-          <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">About us</Link>
+          <Link to="/" className="cursor-pointer hover:text-orange-300 transition duration-300">Home</Link>
+          <Link to="list" className="cursor-pointer hover:text-orange-300 transition duration-300">List</Link>
+          <Link to="/" className="cursor-pointer hover:text-orange-300 transition duration-300">About us</Link>
         </div>
 
         {/* Login Link */}
         <div className="md:items-center gap-4 hidden md:flex ">
-          <Link to='cart'><FaOpencart /></Link>
+          <Link title='Cart' to='cart' className='text-2xl'><FaOpencart /></Link>
           <Link to='user'>Login / Register</Link>
         </div>
 

@@ -5,19 +5,11 @@ import Section from '../HOC/Section'
 const List = () => {
   return (
     <Section>
-      <h1 className='mb-44'>List</h1>
+      <h1 className='heading'>List</h1>
       <div className="product-grid">
         <Product />
         <Product />
         <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-
       </div>
     </Section>
   )
