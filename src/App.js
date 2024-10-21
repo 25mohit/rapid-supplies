@@ -9,6 +9,7 @@ import NotFound from './components/Pages/NotFound';
 import HeroSection from './components/Section/HeroSection';
 import Footer from './components/utils/Helpers/Footer';
 import List from './components/Pages/List';
+import Cart from './components/Pages/Cart';
 function App() {
   
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/list' exact element={<List />} />
         <Route path='/user' element={<User />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

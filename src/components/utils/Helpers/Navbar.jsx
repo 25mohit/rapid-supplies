@@ -25,13 +25,12 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-8 text-md">
           <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">Home</Link>
           <Link to="list" className="cursor-pointer hover:text-gray-400 transition duration-300">List</Link>
-          <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">Products</Link>
           <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">About us</Link>
         </div>
 
         {/* Login Link */}
         <div className="md:items-center gap-4 hidden md:flex ">
-          <FaOpencart />
+          <Link to='cart'><FaOpencart /></Link>
           <Link to='user'>Login / Register</Link>
         </div>
 
@@ -60,15 +59,14 @@ export default function Navbar() {
             List
           </Link>
           <Link to='/' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            Products
-          </Link>
-          <Link to='/' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
             About us
           </Link>
           <Link to='user' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
             Login / Register
           </Link>
-          <FaOpencart className='text-2xl' />
+          <Link to='cart'>
+            <FaOpencart className='text-2xl' />
+          </Link>
         </div>
       </div>
     </nav>
