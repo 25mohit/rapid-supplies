@@ -1,8 +1,9 @@
 import React from 'react'
+import Form from '../../Layout/Form'
 
-const RegisterForm = () => {
+const RegisterForm = ({setVisibleForm}) => {
   return (
-    <div>RegisterForm</div>
+    <Form form="Register" >RegisterForm</Form>
   )
 }
 

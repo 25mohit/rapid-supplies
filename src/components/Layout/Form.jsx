@@ -1,8 +1,17 @@
 import React from 'react'
+import { IoMdClose } from "react-icons/io";
 
-const Form = () => {
+const Form = props => {
   return (
-    <div>Form</div>
+    <form>
+      <header className='flex items-center'>
+        <div>
+          <h2>{props.form}</h2>
+        </div>
+        <IoMdClose />
+      </header>
+      {props.children}
+    </form>
   )
 }
 
