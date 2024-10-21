@@ -9,7 +9,7 @@ const CartProduct = () => {
     <div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-2 py-4 transition ease-in hover:shadow-xl'>
         <section className='flex gap-1'>
             <div className="image ">
-                <img src="https://pngimg.com/uploads/hoodie/hoodie_PNG24.png" alt="" />
+                <img loading='lazy' src="https://pngimg.com/uploads/hoodie/hoodie_PNG24.png" alt="" />
             </div>
             <div className="content flex flex-col gap-3">
                 <h1 title='Product Title' className='text-lg'>Mens Hoodie - RED Color</h1>

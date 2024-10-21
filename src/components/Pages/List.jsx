@@ -10,6 +10,16 @@ const List = () => {
         <Product />
         <Product />
         <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
       </div>
     </Section>
   )

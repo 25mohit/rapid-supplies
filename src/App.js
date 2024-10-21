@@ -10,6 +10,7 @@ import HeroSection from './components/Section/HeroSection';
 import Footer from './components/utils/Helpers/Footer';
 import List from './components/Pages/List';
 import Cart from './components/Pages/Cart';
+
 function App() {
   
   return (

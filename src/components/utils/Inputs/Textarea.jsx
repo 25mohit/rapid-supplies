@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const Textarea = props => {
   const [key] = useState(function uniqueId(){
