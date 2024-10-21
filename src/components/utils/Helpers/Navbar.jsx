@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { FaOpencart } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,8 @@ export default function Navbar() {
         </div>
 
         {/* Login Link */}
-        <div className="hidden md:block">
+        <div className="md:items-center gap-4 hidden md:flex ">
+          <FaOpencart />
           <Link to='user'>Login / Register</Link>
         </div>
 
@@ -43,7 +45,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar Menu */}
       <div
-        className={`fixed z-10 top-0 right-0 h-full w-64 bg-gray-900 text-white p-6 transition-transform transform ${
+        className={`fixed z-20 top-0 right-0 h-full w-64 bg-gray-900 text-white p-6 transition-transform transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
@@ -66,6 +68,7 @@ export default function Navbar() {
           <Link to='user' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
             Login / Register
           </Link>
+          <FaOpencart className='text-2xl' />
         </div>
       </div>
     </nav>

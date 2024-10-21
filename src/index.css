@@ -8,10 +8,10 @@
     --padding-pc: 0 7rem;
     --padding-mobile: 0 2rem;
     --padding-form: 2.1rem 1.4rem;
-    --color-primary: orange;
+    --color-primary: #3AACCE;
     --field-height: 2.3rem;
 }
 body{
     box-sizing: border-box;
-    background-color: rgb(229, 243, 246);
+    /* background-color: rgb(223, 241, 245); */
 }

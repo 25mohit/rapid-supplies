@@ -6,7 +6,19 @@ const List = () => {
   return (
     <Section>
       <h1 className='mb-44'>List</h1>
-      <Product />
+      <div className="product-grid">
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+
+      </div>
     </Section>
   )
 }
