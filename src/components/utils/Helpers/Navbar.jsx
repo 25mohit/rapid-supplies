@@ -64,7 +64,7 @@ export default function Navbar() {
           <Link to='user' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
             Login / Register
           </Link>
-          <Link to='cart'>
+          <Link to='cart' onClick={toggleMenu}>
             <FaOpencart className='text-2xl' />
           </Link>
         </div>

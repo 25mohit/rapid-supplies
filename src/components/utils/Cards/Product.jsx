@@ -1,6 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { SignInUser } from '../../../redux/slices/cartSlice'
 
 const Product = () => {
+  const dispatch = useDispatch()
+
+  const addToCartHandler = () => {
+    dispatch(SignInUser())
+  }
+
   return (
     <div className='product cursor-pointer mb-44'>
       <div className="image-container">
@@ -14,7 +22,7 @@ const Product = () => {
           <span className='text-sm italic'>X, XL, 2XL</span>
           <span className='text-lg font-bold italic'>$20.99</span>
         </div>
-        <button className="btn my-3 mt-4">Add to Cart</button>
+        <button className="btn my-3 mt-4" onClick={addToCartHandler}>Add to Cart</button>
       </section>
     </div>
   )
