@@ -1,8 +1,9 @@
 import React from 'react'
+import Section from '../HOC/Section'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Section>Home</Section>
   )
 }
 
