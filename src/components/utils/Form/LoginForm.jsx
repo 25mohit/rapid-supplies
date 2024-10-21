@@ -7,7 +7,6 @@ import { loginUserSchema } from '../../schemas'
 const LoginForm = ({setVisibleForm}) => {
 
   const onSubmitHandler = e => {
-    // e.preventDefault()
     console.log("Submited")
   }
 
@@ -21,10 +20,6 @@ const LoginForm = ({setVisibleForm}) => {
     validateOnChange: false
   })
 
-
-  console.log(values, errors);
-  
-  
   return (
     <Form form="Login" >
       <Input error={errors.email} onChange={handleChange} name="email" value={values.email} placeholder="Enter your email" type="text"/>
