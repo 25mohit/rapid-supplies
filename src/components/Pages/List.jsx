@@ -1,12 +1,13 @@
 import React from 'react'
 import Product from '../utils/Cards/Product'
+import Section from '../HOC/Section'
 
 const List = () => {
   return (
-    <div>
-      <h1>List</h1>
+    <Section>
+      <h1 className='mb-44'>List</h1>
       <Product />
-    </div>
+    </Section>
   )
 }
 

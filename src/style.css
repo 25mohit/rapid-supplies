@@ -45,14 +45,56 @@
     border-radius: 5px;
     height: var(--field-height);
     border: 1px solid var(--color-primary);
+    transition: 0.5s;
+    padding: 0 1rem;
 }
 .btn:hover{
     background-color: white;
     color: var(--color-primary);
     transition: 0.5s;
+    scale: 1.05;
 }
 .toogler > span.active{
     color: var(--color-primary);
+}
+.product{
+    width: 17rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    background-color: #3AACCE;
+    box-shadow: 5px 5px 10px 1px rgba(15,15,15,0.3);
+    text-align: center;
+    position: relative;
+}
+.product p{
+    line-height: 20px;
+}
+.product .image-container{
+    height: 4rem;
+}
+.product .image-container .shadow{
+    z-index: 5;
+    width: 5rem;
+    height: 0px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 20px 8px rgba(10,10,10,0.8);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+}
+.product .image-container img{
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    z-index: 10;
+}
+.product:hover .image-container img{
+    top: -70%;
+    transition: 0.5s;
 }
 @media screen and (max-width: 650px){
     .navbar, .footer, .sect{

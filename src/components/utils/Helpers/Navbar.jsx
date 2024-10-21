@@ -22,10 +22,10 @@ export default function Navbar() {
 
         {/* Center Menu */}
         <div className="hidden md:flex space-x-8 text-md">
-          <span className="cursor-pointer hover:text-gray-400 transition duration-300">Home</span>
-          <span className="cursor-pointer hover:text-gray-400 transition duration-300">List</span>
-          <span className="cursor-pointer hover:text-gray-400 transition duration-300">Products</span>
-          <span className="cursor-pointer hover:text-gray-400 transition duration-300">About us</span>
+          <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">Home</Link>
+          <Link to="list" className="cursor-pointer hover:text-gray-400 transition duration-300">List</Link>
+          <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">Products</Link>
+          <Link to="/" className="cursor-pointer hover:text-gray-400 transition duration-300">About us</Link>
         </div>
 
         {/* Login Link */}
@@ -51,21 +51,21 @@ export default function Navbar() {
           <FiX size={24} />
         </button>
         <div className="mt-8 space-y-6 flex flex-col">
-          <span onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
+          <Link to='' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
             Home
-          </span>
-          <span onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            About
-          </span>
-          <span onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            Services
-          </span>
-          <span onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            Contact
-          </span>
-          <span onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            <Link to='user'>Login / Register</Link>
-          </span>
+          </Link>
+          <Link to='list' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
+            List
+          </Link>
+          <Link to='/' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
+            Products
+          </Link>
+          <Link to='/' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
+            About us
+          </Link>
+          <Link to='user' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
+            Login / Register
+          </Link>
         </div>
       </div>
     </nav>
