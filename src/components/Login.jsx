@@ -4,7 +4,7 @@ import { doSignInWithEmailAndPassoword, doSignInWithGoogle } from '../firebase/a
 import { replace, useNavigate } from 'react-router-dom'
 
 const Login = () => {
-    // const { userLoggedIn } = useAuth()
+    
     const [formData, setFormData] = useState({})
     const [isSignIn, setIsSignIn] = useState(false)
 
