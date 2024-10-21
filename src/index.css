@@ -6,4 +6,12 @@
     --navbar-height: 3.5rem;
     --footer-height: 2rem;
     --padding-pc: 0 7rem;
+    --padding-mobile: 0 2rem;
+    --padding-form: 2.1rem 1.4rem;
+    --color-primary: orange;
+    --field-height: 2.3rem;
+}
+body{
+    box-sizing: border-box;
+    background-color: rgb(229, 243, 246);
 }

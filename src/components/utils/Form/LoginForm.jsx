@@ -7,6 +7,7 @@ const LoginForm = ({setVisibleForm}) => {
     <Form form="Login">
       <Input placeholder="Enter your email" type="text"/>
       <Input placeholder="Enter your password" type="password"/>
+      <button className="btn">Login</button>
     </Form>
   )
 }

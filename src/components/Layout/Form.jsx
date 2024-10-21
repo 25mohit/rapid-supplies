@@ -3,14 +3,15 @@ import { IoMdClose } from "react-icons/io";
 
 const Form = props => {
   return (
-    <form>
-      <header className='flex items-center'>
+    <form className='form bg-white flex flex-col rounded-md shadow-xl gap-6'>
+      <header className='flex mb-2'>
         <div>
-          <h2>{props.form}</h2>
+          <h2 className='text-xl select-none'>{props.form}</h2>
         </div>
-        <IoMdClose />
       </header>
-      {props.children}
+      <section className='flex flex-col gap-4'>
+        {props.children}
+      </section>
     </form>
   )
 }
