@@ -6,3 +6,4 @@
 6. 'Yup' Form validation added
 7. Review Modal
 8. Cart Section
+9. MUI Data Table

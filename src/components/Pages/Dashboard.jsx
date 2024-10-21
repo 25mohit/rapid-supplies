@@ -7,7 +7,10 @@ const Dashboard = () => {
   return (
     <AuthWrapper>
       <Section>
-        <div className="table p-1 bg-red-400 h-full">
+        <div className="statistics">
+        
+        </div>
+        <div className="table w-full p-1 bg-blue-100 rounded-md h-full">
           
           <DataTable />
         </div>
