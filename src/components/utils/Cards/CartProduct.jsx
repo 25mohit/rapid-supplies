@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaStar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoPrintOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
@@ -18,12 +17,12 @@ const CartProduct = ({ data }) => {
 
   return (
     <motion.div
-                className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-3 py-5 transition ease-in hover:shadow-xl'
-                // initial={{ opacity: 0, x: 100 }}      // Initial animation when entering
-                // animate={{ opacity: 1, x: 0 }}        // Animation when item is displayed
-                exit={{ opacity: 0, x: -100 }}        // Exit animation for smooth removal
-                transition={{ duration: 0.5 }}        // Controls the speed of animations
-            >
+        className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-3 py-5 transition ease-in hover:shadow-xl'
+        // initial={{ opacity: 0, x: 100 }}      // Initial animation when entering
+        // animate={{ opacity: 1, x: 0 }}        // Animation when item is displayed
+        exit={{ opacity: 0, x: -100 }}        // Exit animation for smooth removal
+        transition={{ duration: 0.5 }}        // Controls the speed of animations
+    >
         <section className='flex gap-5'>
             <div className="image">
                 <img loading='lazy' src={data?.img} alt="" />

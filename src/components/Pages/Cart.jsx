@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Section from '../HOC/Section'
 import CartProduct from '../utils/Cards/CartProduct'
-import { ClearCart, GetCartItems } from '../../redux/slices/cartSlice'
+import { ClearCart } from '../../redux/slices/cartSlice'
 import { Fireworks } from 'fireworks-js'
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -22,7 +22,6 @@ const Cart = () => {
     const container = document.querySelector('.firework')
 
     const placeOrderHandler = () => {
-      
       setShowFirework(true)
       const fireworks = new Fireworks(container, { /* options */ })
       console.log(container);
@@ -34,7 +33,6 @@ const Cart = () => {
       setShowFirework(false)
       navigate('/')
     }
-    console.log(cartItems);
     
   return (
     <Section>
@@ -66,7 +64,7 @@ const Cart = () => {
             </div>
           }
           </div> 
-        </>:
+        </> :
         <div>
           <h1 className='text-lg italic'>No Data to Display</h1>
         </div>
