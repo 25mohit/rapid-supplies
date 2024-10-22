@@ -3,6 +3,11 @@ import Product from '../utils/Cards/Product'
 import Section from '../HOC/Section'
 import { useDispatch, useSelector } from 'react-redux'
 import { FetchProducts } from '../../redux/slices/productSlice'
+import Loader from '../utils/Loader'
+
+const shuffleArray = (array) => {
+  return array.sort(() => Math.random() - 0.5);
+}
 
 const List = () => {
 
@@ -12,28 +17,17 @@ const List = () => {
   useEffect(() => {
     dispatch(FetchProducts())
   },[])
-  console.log("productsList", productsList);
+
+  const shuffledProducts = shuffleArray([...productsList]);
   
   return (
     <Section>
-      <h1 className='heading'>List</h1>
+      <h1 className='heading'>Trending Products</h1>
       <div className="product-grid">
         {
-          productsList?.[0]?.map((product, index) => <Product key={index} product={product}/>)
+          shuffledProducts?.length ? shuffledProducts?.map((product, index) => <Product key={index} product={product}/>) :
+          <Loader />
         }
-        {/* <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product /> */}
       </div>
     </Section>
   )

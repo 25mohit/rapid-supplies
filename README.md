@@ -8,3 +8,4 @@
 8. Cart Section
 9. MUI Data Table
 10. Admin Page, MUI Data Table
+11. Loading (React Spinners)

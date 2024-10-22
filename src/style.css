@@ -90,6 +90,7 @@
 }
 .product{
     width: 17rem;
+    height: 22rem;
     padding: 1rem;
     border-radius: 20px;
     box-shadow: 5px 5px 10px 1px rgba(15,15,15,0.3);
@@ -110,6 +111,9 @@
 .product:hover .quantity{
     color: var(--color-primary);
 }
+.product > section{
+    height: calc(100% - 4rem);
+}
 .product p{
     line-height: 20px;
 }
@@ -129,7 +133,7 @@
 }
 .product .image-container img{
     position: absolute;
-    top: -50%;
+    top: -43%;
     left: 50%;
     transform: translateX(-50%);
     transition: 0.5s;
@@ -138,7 +142,7 @@
     object-fit: contain;
 }
 .product:hover .image-container img{
-    top: -65%;
+    top: -50%;
     transition: 0.5s;
 }
 .product-grid {
@@ -169,7 +173,8 @@
 }
 .cart-product > section .image img{
     min-width: 100%;
-    height: fit-content;
+    aspect-ratio: 1;
+    /* height: fit-content; */
 }
 .quantity{
     border: 1px solid var(--color-primary);

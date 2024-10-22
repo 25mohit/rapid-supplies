@@ -25,20 +25,27 @@ const Product = ({ product }) => {
         <img loading='lazy' src={product?.img} alt="" />
         <div className="shadow"></div>
       </div>
-      <section>
+      <section className='flex flex-col justify-between'>
         <h1 className='text-xl font-bold'>{product?.heading}</h1>
         <p className='my-2 italic'>{product?.description}</p>
         <div className='flex justify-between items-center'>
-          <span className='text-sm italic'>{product?.sizes?.map((size, index) => size,)}</span>
-          <span className='text-lg font-bold italic'>{product?.price}</span>
+          { product?.sizes ? 
+            <select name="" id="" className='quantity'>
+              {product?.sizes?.map((size, index) => <option>{size}</option>)}
+            </select> : 
+          <span></span>}
+          <span className='text-lg font-bold italic'><i className='font-normal text-sm mr-1'>AED</i>{product?.price}</span>
         </div>
         <div className='flex items-center justify-between my-2'>
-          <select name="" id="" className='quantity'>
-            <option value="">1</option>
-          </select>
+          { product?.maxQuantity ? 
+            <select name="" id="" className='quantity'>
+              {
+                [...Array(product?.maxQuantity)]?.map((_, quantity) => <option key={quantity} value={quantity+1}>{quantity+1}</option>)
+              }
+            </select> : ''}
           <span title='Click to write a review' className='text-orange-400 review text-sm' onClick={() => setShowReviewModal(true)}>Write a review</span>
         </div>
-        <button className="btn my-3 mt-4" onClick={addToCartHandler}>Add to Cart</button>
+        <button className="btn my-3 mt-4 mx-auto" onClick={addToCartHandler}>Add to Cart</button>
       </section>
       { showReviewModal && <>
         <div className="overlay" onClick={() => setShowReviewModal(false)}></div>
