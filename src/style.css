@@ -199,6 +199,8 @@
     top: 50%;
     left: 50%;
     width: 500px;
+    max-height: 400px;
+    overflow: auto;
     color: var(--color-primary) !important;
     background-color: white;
     transform: translate(-50%, -50%);

@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FetchProducts } from '../../redux/slices/productSlice'
 import Loader from '../utils/Loader'
 
-const shuffleArray = (array) => {
-  return array.sort(() => Math.random() - 0.5);
-}
+// const shuffleArray = (array) => {
+//   return array.sort(() => Math.random() - 0.5);
+// }
 
 const List = () => {
 
@@ -23,14 +23,14 @@ const List = () => {
     }
   },[])
 
-  const shuffledList = productsList?.length ? shuffleArray([...productsList]) : []
+  // const shuffledList = productsList?.length ? shuffleArray([...productsList]) : []
   
   return (
     <Section>
       <h1 className='heading'>Trending Products</h1>
       <div className="product-grid">
         {
-          shuffledList?.map((product, index) => <Product key={index} product={product}/>)
+          productsList?.map((product, index) => <Product key={index} product={product}/>)
         }
       </div>
     </Section>

@@ -3,18 +3,14 @@ import { FaStar } from 'react-icons/fa';
 import { FaRegStarHalfStroke, FaRegStar } from 'react-icons/fa6';
 
 const Reviews = ({ rating }) => {
-  // Ensure the rating is between 0 and 5
   const clampedRating = Math.max(0, Math.min(rating, 5));
   
-  // Calculate the number of full and half stars
   const fullStars = Math.floor(clampedRating);
   const halfStar = clampedRating % 1 >= 0.5 ? 1 : 0;
   const emptyStars = 5 - fullStars - halfStar;
-
-  console.log(fullStars, halfStar, emptyStars);
   
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'flex', alignItems: 'center' }} title={`${rating} Star Rating`}>
       {[...Array(fullStars)].map((_, index) => (
         <FaStar key={`full-${index}`} color="#FFD700" />
       ))}

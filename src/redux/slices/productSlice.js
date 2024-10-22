@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ProductsList } from "../../moc_data/Products";
 import {Loading} from './settingSlice'
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const FetchProducts = createAsyncThunk("FetchProducts", async (payload, { dispatch }) => {
     dispatch(Loading(true))
@@ -21,6 +22,7 @@ export const SaveProductReview = createAsyncThunk("SaveProductReview", async (pa
     
     // Intentionally giving this setTimeout here, so that we can see loading state for 1 second. This is not mendatory. 
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    toast.success("Review added Successfully");
     dispatch(Loading(false))
     
     return payload
