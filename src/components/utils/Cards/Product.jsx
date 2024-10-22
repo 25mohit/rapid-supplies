@@ -8,13 +8,7 @@ const Product = ({ product }) => {
 
   const dispatch = useDispatch()
 
-  const addToCartHandler = () => {
-    const payload = {
-      img: 'https://pngimg.com/uploads/hoodie/hoodie_PNG24.png',
-      title: 'Mens latest hoodie in most beautiful colors. 100% Cotton Premium Design',
-      price: '20.99',
-      quantity: 5
-    }
+  const addToCartHandler = (payload) => {
     dispatch(AddItemToCart(payload))
   }
   
@@ -31,7 +25,7 @@ const Product = ({ product }) => {
         <div className='flex justify-between items-center'>
           { product?.sizes ? 
             <select name="" id="" className='quantity'>
-              {product?.sizes?.map((size, index) => <option>{size}</option>)}
+              {product?.sizes?.map((size, index) => <option key={index}>{size}</option>)}
             </select> : 
           <span></span>}
           <span className='text-lg font-bold italic'><i className='font-normal text-sm mr-1'>AED</i>{product?.price}</span>
@@ -45,7 +39,7 @@ const Product = ({ product }) => {
             </select> : ''}
           <span title='Click to write a review' className='text-orange-400 review text-sm' onClick={() => setShowReviewModal(true)}>Write a review</span>
         </div>
-        <button className="btn my-3 mt-4 mx-auto" onClick={addToCartHandler}>Add to Cart</button>
+        <button className="btn my-3 mt-4 mx-auto" onClick={() => addToCartHandler(product)}>Add to Cart</button>
       </section>
       { showReviewModal && <>
         <div className="overlay" onClick={() => setShowReviewModal(false)}></div>

@@ -22,8 +22,9 @@ const prod21 = './Assets/Sample/21.png'
 const prod22 = './Assets/Sample/22.png'
 const prod23 = './Assets/Sample/23.png'
 
-export const PorductsList = [
+export const ProductsList = [
     {
+        "id": 1001,
         "img": prod1,
         "heading": "Man's Red Hoodie",
         "description": "Mens latest hoodie in most beautiful colors. 100% Cotton Premium Design",
@@ -43,6 +44,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1002,
         "img": prod2,
         "heading": "Wireless Bluetooth EarBuds",
         "description": "Experience high-quality sound with noise cancellation.",
@@ -57,6 +59,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1003,
         "img": prod3,
         "heading": "Men's Casual Sneakers",
         "description": "Stylish and comfortable sneakers for everyday use.",
@@ -67,6 +70,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1004,
         "img": prod4,
         "heading": "Luxury Yoga Mat",
         "description": "Non-slip and eco-friendly yoga mat for ultimate comfort.",
@@ -85,6 +89,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1005,
         "img": prod5,
         "heading": "Wireless Charging Pad",
         "description": "Fast and efficient wireless charging for your devices.",
@@ -99,6 +104,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1006,
         "img": prod6,
         "heading": "Stainless Steel Water Bottle",
         "description": "Keep your drinks cold or hot for hours.",
@@ -113,6 +119,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1007,
         "img": prod7,
         "heading": "Men's Black Leather Jacket",
         "description": "Classic leather jacket with a modern twist.",
@@ -128,6 +135,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1008,
         "img": prod8,
         "heading": "Smart Fitness Tracker",
         "description": "Monitor your health and fitness with this sleek device.",
@@ -137,6 +145,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1009,
         "img": prod9,
         "heading": "Classic White T-Shirt",
         "description": "Soft, breathable, and perfect for layering.",
@@ -152,6 +161,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1010,
         "img": prod10,
         "heading": "Eco-Friendly Notebook",
         "description": "Made from recycled paper, perfect for jotting down notes.",
@@ -161,6 +171,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1011,
         "img": prod11,
         "heading": "Men's Blue Jeans",
         "description": "Stylish jeans that fit perfectly for any occasion.",
@@ -176,6 +187,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1012,
         "img": prod12,
         "heading": "Multi-Tool Pocket Knife",
         "description": "Compact and versatile tool for everyday use.",
@@ -185,6 +197,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1013,
         "img": prod13,
         "heading": "LED Desk Lamp",
         "description": "Adjustable lamp with various brightness settings.",
@@ -199,6 +212,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1014,
         "img": prod14,
         "heading": "Stylish Sunglasses",
         "description": "UV protection and a fashionable design.",
@@ -213,6 +227,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1015,
         "img": prod15,
         "heading": "Portable Bluetooth Speaker",
         "description": "Take your music anywhere with this portable speaker.",
@@ -222,6 +237,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1016,
         "img": prod16,
         "heading": "Women's Floral Dress",
         "description": "Light and breezy dress perfect for summer days.",
@@ -237,6 +253,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1017,
         "img": prod17,
         "heading": "Non-stick Cookware Set",
         "description": "Durable and easy to clean cookware for your kitchen.",
@@ -246,6 +263,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1018,
         "img": prod18,
         "heading": "Portable Phone Charger",
         "description": "Keep your devices charged on the go.",
@@ -260,6 +278,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1019,
         "img": prod19,
         "heading": "Men's Casual Shirt",
         "description": "Perfect for both work and play, made with breathable fabric.",
@@ -275,6 +294,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1020,
         "img": prod20,
         "heading": "Heavy-duty Backpack",
         "description": "Perfect for school or outdoor adventures.",
@@ -289,6 +309,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1021,
         "img": prod21,
         "heading": "Classic Wristwatch",
         "description": "Timeless design that suits any outfit.",
@@ -298,6 +319,7 @@ export const PorductsList = [
         "reviews": []
     },
     {
+        "id": 1022,
         "img": prod22,
         "heading": "Gaming Mouse",
         "description": "Precision and comfort for the ultimate gaming experience.",
@@ -312,6 +334,7 @@ export const PorductsList = [
         ]
     },
     {
+        "id": 1023,
         "img": prod23,
         "heading": "Knitted Scarf",
         "description": "Warm and stylish scarf for chilly days.",
@@ -320,4 +343,5 @@ export const PorductsList = [
         "inStock": true,
         "reviews": []
     }   
-]
+];
+

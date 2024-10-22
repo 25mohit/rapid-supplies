@@ -1,6 +1,6 @@
 1. Grid Layout for Product Listing.
 2. TailwindCSS / Firebase / MUI / React Icons
-3. AXIOS
+3. Getting Data with AXIOS
 4. Redux, Redux-Toolkit, Redux Persist
 5. Formik for managing forms states
 6. 'Yup' Form validation added
@@ -9,3 +9,4 @@
 9. MUI Data Table
 10. Admin Page, MUI Data Table
 11. Loading (React Spinners)
+12. React18

@@ -7,7 +7,6 @@ import { FaOpencart } from "react-icons/fa6";
 
 const navbarOption = [
   { label: 'Home', route: '/' },
-  { label: 'List', route: '/list' },
   { label: 'About us', route: '/' },
   { label: 'Dashboard', route: '/dashboard' },
 ]

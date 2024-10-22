@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <AuthWrapper>
       <Section>
-        <header className='flex justify-between'>
+        <header className='flex  flex-wrap justify-between'>
           <div className="stats-container items-center pb-7 flex gap-6">
             <Statistics heading="products" count={15}/>
             <Statistics heading="category" count={2}/>

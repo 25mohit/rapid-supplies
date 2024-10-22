@@ -3,17 +3,17 @@ import { FaStar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoPrintOutline } from "react-icons/io5";
 
-const CartProduct = () => {
+const CartProduct = ({ data }) => {
   return (
-    <div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-2 py-4 transition ease-in hover:shadow-xl'>
+<div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-2 py-4 transition ease-in hover:shadow-xl'>
         <section className='flex gap-1'>
             <div className="image ">
-                <img loading='lazy' src="./Assets/Sample/1.png" alt="" />
+                <img loading='lazy' src={data?.img} alt="" />
             </div>
             <div className="content flex flex-col gap-3">
-                <h1 title='Product Title' className='text-lg'>Mens Hoodie - RED Color</h1>
+                <h1 title='Product Title' className='text-lg'>{data?.heading}</h1>
                 <div className='flex flex-col gap-1'>
-                    <p title='Product Description' className='text-gray-500'>Mens latest hoodie in most beautiful colors. 100% Cotton Premium Design</p>
+                    <p title='Product Description' className='text-gray-500'>{data?.description}</p>
                     <span title='Reviews' className='flex items-center gap-1 text-yellow-300'>
                         <FaStar />
                         <FaStar />
@@ -25,7 +25,7 @@ const CartProduct = () => {
                         <select  name="" id="" className='quantity cursor-pointer'>
                             <option value="">4</option>
                         </select>
-                        <p className='text-xl font-bold italic text-orange-600'>$45.99</p>
+                        <p className='text-xl font-bold italic text-orange-600'>AED {data?.price}</p>
                     </div>
                 </div>
             </div>
