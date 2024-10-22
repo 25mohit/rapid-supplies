@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { AddItemToCart, SignInUser } from '../../../redux/slices/cartSlice'
 import ReviewModal from '../Modals/ReviewModal'
 
-const Product = () => {
+const Product = ({ product }) => {
   const [showReviewModal, setShowReviewModal] = useState(false)
 
   const dispatch = useDispatch()
@@ -22,15 +22,15 @@ const Product = () => {
   return (
     <div className='product cursor-pointer mb-44'>
       <div className="image-container">
-        <img loading='lazy' src="https://pngimg.com/uploads/hoodie/hoodie_PNG24.png" alt="" />
+        <img loading='lazy' src={product?.img} alt="" />
         <div className="shadow"></div>
       </div>
       <section>
-        <h1 className='text-xl font-bold'>Man Hoodie</h1>
-        <p className='my-2 italic'>Mens latest hoodie in most beautiful colors. 100% Cotton Premium Design</p>
+        <h1 className='text-xl font-bold'>{product?.heading}</h1>
+        <p className='my-2 italic'>{product?.description}</p>
         <div className='flex justify-between items-center'>
-          <span className='text-sm italic'>X, XL, 2XL</span>
-          <span className='text-lg font-bold italic'>$20.99</span>
+          <span className='text-sm italic'>{product?.sizes?.map((size, index) => size,)}</span>
+          <span className='text-lg font-bold italic'>{product?.price}</span>
         </div>
         <div className='flex items-center justify-between my-2'>
           <select name="" id="" className='quantity'>

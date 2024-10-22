@@ -129,15 +129,16 @@
 }
 .product .image-container img{
     position: absolute;
-    top: -60%;
+    top: -50%;
     left: 50%;
     transform: translateX(-50%);
     transition: 0.5s;
     z-index: 10;
-    border-radius: 50% 50% 0 0;
+    height: 15rem;
+    object-fit: contain;
 }
 .product:hover .image-container img{
-    top: -70%;
+    top: -65%;
     transition: 0.5s;
 }
 .product-grid {

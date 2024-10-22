@@ -5,6 +5,12 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FaOpencart } from "react-icons/fa6";
 
+const navbarOption = [
+  { label: 'Home', route: '/' },
+  { label: 'List', route: '/list' },
+  { label: 'About us', route: '/' },
+  { label: 'Dashboard', route: '/dashboard' },
+]
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
  
@@ -23,9 +29,9 @@ export default function Navbar() {
 
         {/* Center Menu */}
         <div className="hidden md:flex space-x-8 text-md">
-          <Link to="/" className="cursor-pointer hover:text-orange-300 transition duration-300">Home</Link>
-          <Link to="list" className="cursor-pointer hover:text-orange-300 transition duration-300">List</Link>
-          <Link to="/" className="cursor-pointer hover:text-orange-300 transition duration-300">About us</Link>
+          {
+            navbarOption?.map((option, index) => <Link key={index} to={option.route} className="cursor-pointer hover:text-orange-300 transition duration-300">{option.label}</Link>)
+          }
         </div>
 
         {/* Login Link */}
@@ -52,18 +58,9 @@ export default function Navbar() {
           <FiX size={24} />
         </button>
         <div className="mt-8 space-y-6 flex flex-col">
-          <Link to='' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            Home
-          </Link>
-          <Link to='list' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            List
-          </Link>
-          <Link to='/' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            About us
-          </Link>
-          <Link to='user' onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">
-            Login / Register
-          </Link>
+          {
+            navbarOption?.map((option, index) => <Link key={index} to={option.route} onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">{option.label}</Link>)
+          }
           <Link to='cart' onClick={toggleMenu}>
             <FaOpencart className='text-2xl' />
           </Link>

@@ -1,15 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const SignInUser = createAsyncThunk("SignInUser", async (payload, { dispatch }) => {
-    alert("Success")
-    const response = {
-        message: "Successfully Logged In",
-        status: true
-    }
-   return response
-})
-
-export const AddItemToCart = createAsyncThunk("SignInUser", async (payload, { dispatch }) => {
+export const AddItemToCart = createAsyncThunk("AddItemToCart", async (payload, { dispatch }) => {
     alert("Added")
 
    return payload
@@ -18,7 +9,7 @@ export const AddItemToCart = createAsyncThunk("SignInUser", async (payload, { di
 const CartSlice = createSlice({
     name: "cart",
     initialState: {
-      cartList: []
+      cartList: [],
     },
     reducers: {},
     extraReducers: (builder) => {
