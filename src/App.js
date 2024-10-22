@@ -12,21 +12,30 @@ import Cart from './components/Pages/Cart';
 import Loader from './components/utils/Loader';
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from 'react-toastify';
+import { lazy, Suspense } from 'react';
+import { HashLoader } from 'react-spinners';
 
 function App() {
   
+  const NewList = lazy(() => import('./components/Pages/List'))
+  const NewLUser = lazy(() => import('./components/Pages/User'))
+  const NewLDashboard = lazy(() => import('./components/Pages/Dashboard'), 2000)
+  const NewLCart = lazy(() => import('./components/Pages/Cart'))
+
   return (
     <BrowserRouter>
       <ToastContainer />
       <Navbar />
       <Loader />
-      <Routes>
-        <Route path='/' exact element={<List />} />
-        <Route path='/user' element={<User />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<div className='load'><HashLoader size={60} color='rgb(226, 226, 59)'/></div>}>
+        <Routes>
+          <Route path='/' exact element={<NewList />} />
+          <Route path='/user' element={<NewLUser />} />
+          <Route path='/dashboard' element={<NewLDashboard />} />
+          <Route path='/cart' element={<NewLCart />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </BrowserRouter>
   );

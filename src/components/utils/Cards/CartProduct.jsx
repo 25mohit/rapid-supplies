@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import { IoPrintOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { RemoveFromCart } from '../../../redux/slices/cartSlice';
+import Reviews from '../Reviews';
+import { motion } from 'framer-motion';
 
 const CartProduct = ({ data }) => {
     const dispatch = useDispatch()
 
+    console.log(data, data?.reviews?.[0]?.star);
+    
     const removeItemFromCart = () => {
         console.log(data);
         
@@ -15,7 +19,13 @@ const CartProduct = ({ data }) => {
     }
 
   return (
-<div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-3 py-5 transition ease-in hover:shadow-xl'>
+    <motion.div
+                className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-3 py-5 transition ease-in hover:shadow-xl'
+                // initial={{ opacity: 0, x: 100 }}      // Initial animation when entering
+                // animate={{ opacity: 1, x: 0 }}        // Animation when item is displayed
+                exit={{ opacity: 0, x: -100 }}        // Exit animation for smooth removal
+                transition={{ duration: 0.5 }}        // Controls the speed of animations
+            >
         <section className='flex gap-5'>
             <div className="image">
                 <img loading='lazy' src={data?.img} alt="" />
@@ -24,13 +34,7 @@ const CartProduct = ({ data }) => {
                 <h1 title='Product Title' className='text-lg'>{data?.heading}</h1>
                 <div className='flex flex-col gap-1'>
                     <p title='Product Description' className='text-gray-500'>{data?.description}</p>
-                    <span title='Reviews' className='flex items-center gap-1 text-yellow-300'>
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                    </span>
+                    {data?.reviews?.[0]?.star && <Reviews rating={data?.reviews?.[0]?.star}/>}
                     <div className='flex items-center gap-2'>
                         {/* <select  name="" id="" className='quantity cursor-pointer'>
                             <option value="">4</option>
@@ -53,7 +57,7 @@ const CartProduct = ({ data }) => {
                 <button className="btn">Contact Seller</button>
             </div>
         </section>
-    </div>
+    </motion.div>
   )
 }
 

@@ -5,6 +5,7 @@ import CartProduct from '../utils/Cards/CartProduct'
 import { ClearCart, GetCartItems } from '../../redux/slices/cartSlice'
 import { Fireworks } from 'fireworks-js'
 import { useNavigate } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 
 const Cart = () => {
     const [totalAmount, setTotalAmount] = useState(0)
@@ -46,9 +47,11 @@ const Cart = () => {
         </div>
       </div>
       <div className="items-container my-7 flex flex-col gap-7">
-        {
-          cartItems?.map((item, index) => <CartProduct key={item.id} data={item} />)
-        }
+        <AnimatePresence>
+          {
+            cartItems?.map((item, index) => <CartProduct key={item.id} data={item} />)
+          }
+        </AnimatePresence>
       </div>
        <div className={`firework fixed ${showFirework ? 'pointer-events-auto' : 'pointer-events-none'}`}>
       {showFirework &&

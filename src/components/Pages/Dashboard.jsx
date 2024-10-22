@@ -7,6 +7,7 @@ import { FaBoxOpen } from "react-icons/fa";
 import { FaRegStickyNote } from "react-icons/fa";
 
 const Dashboard = () => {
+  
   return (
     <AuthWrapper>
       <Section>
