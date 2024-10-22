@@ -2,34 +2,36 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Section from '../HOC/Section'
 import CartProduct from '../utils/Cards/CartProduct'
-import { GetCartItems } from '../../redux/slices/cartSlice'
+import { ClearCart, GetCartItems } from '../../redux/slices/cartSlice'
 import { Fireworks } from 'fireworks-js'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
     const [totalAmount, setTotalAmount] = useState(0)
     const [showFirework, setShowFirework] = useState(false)
 
     const cartItems = useSelector(state => state.cart.cartList)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
       setTotalAmount(cartItems?.reduce((acc, val) => acc+val.price, 1))      
     },[cartItems])
 
+    const container = document.querySelector('.firework')
+
     const placeOrderHandler = () => {
       
       setShowFirework(true)
-      const container = document.querySelector('.firework')
-      console.log(container);
-      
       const fireworks = new Fireworks(container, { /* options */ })
+      console.log(container);
       fireworks.start()
     }
     
     const onClickHandler = () => {
-      const container = document.querySelector('.firework')
-      const fireworks = new Fireworks(container, { /* options */ })
-      fireworks.stop()
+      dispatch(ClearCart())
       setShowFirework(false)
+      navigate('/')
     }
   return (
     <Section>
@@ -38,7 +40,7 @@ const Cart = () => {
         <div className='flex items-center gap-4'>
           <div className='flex gap-2 items-center'>
             <span className='text-orange-400 font-bold'>Total</span>
-            <h2 title='Total Cart Amount' className='italic cursor-pointer text-2xl text-green-500 font-bold'>AED {totalAmount}</h2>
+            <h2 title='Total Cart Amount' className='italic cursor-pointer text-2xl text-green-500 font-bold'>AED {totalAmount.toFixed(2)}</h2>
           </div>
           <button className="btn" onClick={placeOrderHandler}>Place Order</button>
         </div>
@@ -48,7 +50,7 @@ const Cart = () => {
           cartItems?.map((item, index) => <CartProduct key={item.id} data={item} />)
         }
       </div>
-       <div className={`firework fixed ${showFirework ? 'pointer-events-auto backdrop-blur-sm' : 'pointer-events-none'}`}>
+       <div className={`firework fixed ${showFirework ? 'pointer-events-auto' : 'pointer-events-none'}`}>
       {showFirework &&
         <div className="content fixed gap-4 flex flex-col items-center">
           <h1 className='text-2xl text-green-400 font-extrabold'>Order Successfully Placed</h1>

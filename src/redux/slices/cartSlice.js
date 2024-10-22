@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {Loading} from './settingSlice'
 import { toast } from "react-toastify";
-import { UpdateProductInCart } from "./productSlice";
+import { FetchProducts, UpdateProductInCart } from "./productSlice";
 
 export const AddItemToCart = createAsyncThunk("AddItemToCart", async (payload, { dispatch }) => {
     dispatch(Loading(true))
@@ -27,6 +27,7 @@ export const RemoveFromCart = createAsyncThunk("RemoveFromCart", async (payload,
     return payload
 })
 export const ClearCart = createAsyncThunk("ClearCart", async (_, { dispatch }) => {
+    dispatch(FetchProducts())
     return true
 })
 
