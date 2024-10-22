@@ -48,7 +48,7 @@ export default function Navbar({ isLoogedIn }) {
             <FaOpencart />
           </Link>
           {
-            isLoogedIn ? <span onClick={onSignOut}>Logout</span> : <Link to='user'>Login / Register</Link>
+            isLoogedIn ? <span className='cursor-pointer' onClick={onSignOut}>Logout</span> : <Link to='user'>Login / Register</Link>
           }
         </div>
 
@@ -77,6 +77,9 @@ export default function Navbar({ isLoogedIn }) {
             <span title={`${cartItemsLength} Items are avaiable in Cart`} className='absolute bg-red-500 cursor-pointer cart-no text-sm flex items-center justify-center'>{cartItemsLength}</span>
             <FaOpencart className='text-2xl' />
           </Link>
+          {
+            isLoogedIn ? <span className='text-xl' onClick={onSignOut}>Logout</span> : <Link to='user' onClick={toggleMenu} className='text-xl'>Login / Register</Link>
+          }
         </div>
       </div>
     </nav>

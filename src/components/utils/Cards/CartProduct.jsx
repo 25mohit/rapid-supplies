@@ -9,8 +9,6 @@ import { motion } from 'framer-motion';
 
 const CartProduct = ({ data }) => {
     const dispatch = useDispatch()
-
-    console.log(data, data?.reviews?.[0]?.star);
     
     const removeItemFromCart = () => {
         console.log(data);
@@ -52,7 +50,7 @@ const CartProduct = ({ data }) => {
                     <Link title='Print Invoice' className='text-blue-500 flex items-center gap-1'><IoPrintOutline /> Invoice</Link>
                 </div>
             </div>
-            <div className='flex gap-4'>
+            <div className='flex justify-center flex-wrap gap-4'>
                 <button className="btn remove" onClick={removeItemFromCart}>Remove From Cart</button>
                 <button className="btn">Contact Seller</button>
             </div>
