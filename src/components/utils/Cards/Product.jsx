@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { AddItemToCart, RemoveFromCart, SignInUser } from '../../../redux/slices/cartSlice'
 import ReviewModal from '../Modals/ReviewModal'
 import ReviewList from '../Modals/ReviewList'
+import { motion } from 'framer-motion';
 
 const Product = ({ product }) => {
   const [reviewModalData, setReviewModalData] = useState({})
@@ -20,7 +21,12 @@ const Product = ({ product }) => {
   
 
   return (
-    <div className='product cursor-pointer mb-44'>
+    <motion.div 
+      className='product cursor-pointer mb-44'
+      initial={{ opacity: 0, y: 20 }} 
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <div className="image-container">
         <img loading='lazy' src={product?.img} alt="" />
         <div className="shadow"></div>
@@ -60,7 +66,7 @@ const Product = ({ product }) => {
         <div className="overlay" onClick={() => setReviewModalData({})}></div>
         <ReviewModal data={reviewModalData}/>
       </> : ''}
-    </div>
+      </motion.div>
   )
 }
 
