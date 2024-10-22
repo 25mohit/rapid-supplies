@@ -5,13 +5,14 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FaOpencart } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
+import { doSignOut } from '../../../firebase/auth';
 
 const navbarOption = [
   { label: 'Home', route: '/' },
   { label: 'About us', route: '/' },
   { label: 'Dashboard', route: '/dashboard' },
 ]
-export default function Navbar() {
+export default function Navbar({ isLoogedIn }) {
   const [isOpen, setIsOpen] = useState(false);
  
   const cartItemsLength = useSelector(state => state.cart.cartList)?.length
@@ -20,6 +21,10 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
   
+  const onSignOut = async () => {
+    localStorage.clear()
+    window.location.href = '/user'
+  }
   return (
     <nav className="flex navbar">
       <div className="pc-nav w-full flex justify-between items-center">
@@ -42,7 +47,9 @@ export default function Navbar() {
             <span title={`${cartItemsLength} Items are avaiable in Cart`} className='absolute bg-red-500 cursor-pointer cart-no text-sm flex items-center justify-center'>{cartItemsLength}</span>
             <FaOpencart />
           </Link>
-          <Link to='user'>Login / Register</Link>
+          {
+            isLoogedIn ? <span onClick={onSignOut}>Logout</span> : <Link to='user'>Login / Register</Link>
+          }
         </div>
 
         {/* Hamburger Icon for Mobile */}

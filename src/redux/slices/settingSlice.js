@@ -7,7 +7,7 @@ export const Loading = createAsyncThunk("Loading", async (payload, { dispatch })
 const SettingSlice = createSlice({
     name: "setting",
     initialState: {
-      loadingState: true,
+      loadingState: false,
     },
     reducers: {},
     extraReducers: (builder) => {
