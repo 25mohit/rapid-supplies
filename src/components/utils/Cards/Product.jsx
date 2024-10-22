@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { AddItemToCart, SignInUser } from '../../../redux/slices/cartSlice'
 import ReviewModal from '../Modals/ReviewModal'
+import ReviewList from '../Modals/ReviewList'
 
 const Product = ({ product }) => {
-  const [showReviewModal, setShowReviewModal] = useState(false)
+  const [reviewModalData, setReviewModalData] = useState({})
+  const [reviewListData, setReviewListData] = useState({})
 
   const dispatch = useDispatch()
 
@@ -37,14 +39,21 @@ const Product = ({ product }) => {
                 [...Array(product?.maxQuantity)]?.map((_, quantity) => <option key={quantity} value={quantity+1}>{quantity+1}</option>)
               }
             </select> : ''}
-          <span title='Click to write a review' className='text-orange-400 review text-sm' onClick={() => setShowReviewModal(true)}>Write a review</span>
+            <div>
+              {product?.reviews?.length > 0 && <span className='text-sm mr-1 font-bold italic' onClick={() => setReviewListData(product?.reviews)}>{product?.reviews?.length} reviews</span>}
+              <span title='Click to write a review' className='text-orange-400 review text-sm' onClick={() => setReviewModalData(product)}>Write a review</span>
+            </div>
         </div>
         <button className="btn my-3 mt-4 mx-auto" onClick={() => addToCartHandler(product)}>Add to Cart</button>
       </section>
-      { showReviewModal && <>
-        <div className="overlay" onClick={() => setShowReviewModal(false)}></div>
-        <ReviewModal />
-      </>}
+      { reviewListData?.length ? <>
+        <div className="overlay" onClick={() => setReviewListData({})}></div>
+        <ReviewList data={reviewListData} setReviewListData={setReviewListData}/>
+      </> : ''}
+      { Object.keys(reviewModalData)?.length ? <>
+        <div className="overlay" onClick={() => setReviewModalData({})}></div>
+        <ReviewModal data={reviewModalData}/>
+      </> : ''}
     </div>
   )
 }

@@ -16,6 +16,17 @@ export const FetchProducts = createAsyncThunk("FetchProducts", async (payload, {
     
 })
 
+export const SaveProductReview = createAsyncThunk("SaveProductReview", async (payload, { dispatch }) => {
+    dispatch(Loading(true))
+    
+    // Intentionally giving this setTimeout here, so that we can see loading state for 1 second. This is not mendatory. 
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    dispatch(Loading(false))
+    
+    return payload
+    
+})
+
 const ProductSlice = createSlice({
     name: "product",
     initialState: {
@@ -27,6 +38,20 @@ const ProductSlice = createSlice({
             const payload = action.payload
             state.productList = payload;
         })
+        builder.addCase(SaveProductReview.fulfilled, (state, action) => {
+            const payload = action.payload
+            const newList = state.productList.map(preProd => {
+                if(preProd.id === payload.id){
+                    return {...preProd, reviews: [...preProd.reviews, payload]}
+                } else {
+                    return preProd
+                }
+            })
+            state.productList = newList
+            console.log("newList", state.productList, newList, payload)
+            // state.productList 
+        })
+
     }
   });
   

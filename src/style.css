@@ -195,6 +195,14 @@
     width: fit-content;
     padding: 0.6rem 1rem;
 }
+.review-list{
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    color: var(--color-primary) !important;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
 @media screen and (max-width: 756px){
     
     .product-grid {
