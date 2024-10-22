@@ -4,6 +4,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FaOpencart } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
 
 const navbarOption = [
   { label: 'Home', route: '/' },
@@ -13,6 +14,8 @@ const navbarOption = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
  
+  const cartItemsLength = useSelector(state => state.cart.cartList)?.length
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -35,7 +38,10 @@ export default function Navbar() {
 
         {/* Login Link */}
         <div className="md:items-center gap-4 hidden md:flex ">
-          <Link title='Cart' to='cart' className='text-2xl'><FaOpencart /></Link>
+          <Link title='Cart' to='cart' className='text-2xl relative'>
+            <span title={`${cartItemsLength} Items are avaiable in Cart`} className='absolute bg-red-500 cursor-pointer cart-no text-sm flex items-center justify-center'>{cartItemsLength}</span>
+            <FaOpencart />
+          </Link>
           <Link to='user'>Login / Register</Link>
         </div>
 

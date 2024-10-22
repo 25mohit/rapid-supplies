@@ -79,11 +79,28 @@
     align-items: center;
     gap: 0.4rem;
 }
+.btn.remove{
+    border-color: orange;
+    background-color: orange;
+}
+.btn.no-stock{
+    cursor: not-allowed;
+    border-color: gray;
+    background-color: gray;
+}
 .btn:hover{
     background-color: white;
     color: var(--color-primary);
     transition: 0.5s;
     scale: 1.05;
+}
+.cart-no{
+    right: 100%;
+    top: 50%;
+    width: 1.1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    line-height: 0;
 }
 .toogler > span.active{
     color: var(--color-primary);

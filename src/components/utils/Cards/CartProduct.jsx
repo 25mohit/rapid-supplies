@@ -2,8 +2,18 @@ import React from 'react'
 import { FaStar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoPrintOutline } from "react-icons/io5";
+import { useDispatch } from 'react-redux';
+import { RemoveFromCart } from '../../../redux/slices/cartSlice';
 
 const CartProduct = ({ data }) => {
+    const dispatch = useDispatch()
+
+    const removeItemFromCart = () => {
+        console.log(data);
+        
+        dispatch(RemoveFromCart(data))
+    }
+
   return (
 <div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-2 py-4 transition ease-in hover:shadow-xl'>
         <section className='flex gap-1'>
@@ -31,14 +41,17 @@ const CartProduct = ({ data }) => {
             </div>
         </section>
         <section className='mr-2 text-sm flex flex-col items-center justify-between w-full md:w-fit gap-4 sm:gap-4'>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 w-full text-right'>
                 <span title='Order id' className='text-gray-400'>ORDER # 403-4017630-9343536</span>
                 <div className='flex justify-between'>
                     <Link className='text-blue-500'>View order details</Link>
                     <Link title='Print Invoice' className='text-blue-500 flex items-center gap-1'><IoPrintOutline /> Invoice</Link>
                 </div>
             </div>
-            <button className="btn">Contact Seller</button>
+            <div className='flex gap-4'>
+                <button className="btn remove" onClick={removeItemFromCart}>Remove From Cart</button>
+                <button className="btn">Contact Seller</button>
+            </div>
         </section>
     </div>
   )
