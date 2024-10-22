@@ -15,9 +15,9 @@ const CartProduct = ({ data }) => {
     }
 
   return (
-<div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-2 py-4 transition ease-in hover:shadow-xl'>
-        <section className='flex gap-1'>
-            <div className="image ">
+<div className='cart-product flex flex-wrap justify-between shadow-lg rounded-md px-3 py-5 transition ease-in hover:shadow-xl'>
+        <section className='flex gap-5'>
+            <div className="image">
                 <img loading='lazy' src={data?.img} alt="" />
             </div>
             <div className="content flex flex-col gap-3">
@@ -32,9 +32,9 @@ const CartProduct = ({ data }) => {
                         <FaStar />
                     </span>
                     <div className='flex items-center gap-2'>
-                        <select  name="" id="" className='quantity cursor-pointer'>
+                        {/* <select  name="" id="" className='quantity cursor-pointer'>
                             <option value="">4</option>
-                        </select>
+                        </select> */}
                         <p className='text-xl font-bold italic text-orange-600'>AED {data?.price}</p>
                     </div>
                 </div>

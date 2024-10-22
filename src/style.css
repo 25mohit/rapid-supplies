@@ -191,6 +191,7 @@
 .cart-product > section .image img{
     min-width: 100%;
     aspect-ratio: 1;
+    object-fit: contain;
     /* height: fit-content; */
 }
 .quantity{
@@ -221,6 +222,19 @@
     color: var(--color-primary) !important;
     background-color: white;
     transform: translate(-50%, -50%);
+}
+.firework{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* pointer-events: none; */
+}
+.firework .content{
+
 }
 @media screen and (max-width: 756px){
     

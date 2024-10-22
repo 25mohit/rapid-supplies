@@ -26,6 +26,9 @@ export const RemoveFromCart = createAsyncThunk("RemoveFromCart", async (payload,
     dispatch(Loading(false))
     return payload
 })
+export const ClearCart = createAsyncThunk("ClearCart", async (_, { dispatch }) => {
+    return true
+})
 
 const CartSlice = createSlice({
     name: "cart",
@@ -36,15 +39,16 @@ const CartSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(AddItemToCart.fulfilled, (state, action) => {
             const payload = action.payload;
-            // Ensure cartList is an array before pushing
-            console.log(payload, state.cartList);
             state.cartList = [...state.cartList, payload]
         })
         builder.addCase(RemoveFromCart.fulfilled, (state, action) => {
             const payload = action.payload;
-            // Ensure cartList is an array before pushing
             console.log(payload, state.cartList);
             state.cartList = state.cartList.filter(d => d.id !== payload.id)
+        })
+        builder.addCase(ClearCart.fulfilled, (state, action) => {
+            const payload = action.payload;
+            state.cartList = []
         })
     }
   });

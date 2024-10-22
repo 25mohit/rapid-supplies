@@ -66,7 +66,8 @@ export default function Navbar() {
           {
             navbarOption?.map((option, index) => <Link key={index} to={option.route} onClick={toggleMenu} className="block text-xl hover:text-gray-400 transition duration-300">{option.label}</Link>)
           }
-          <Link to='cart' onClick={toggleMenu}>
+          <Link to='cart' onClick={toggleMenu} className='relative'>
+            <span title={`${cartItemsLength} Items are avaiable in Cart`} className='absolute bg-red-500 cursor-pointer cart-no text-sm flex items-center justify-center'>{cartItemsLength}</span>
             <FaOpencart className='text-2xl' />
           </Link>
         </div>
