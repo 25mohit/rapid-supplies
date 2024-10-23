@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Form from '../../Layout/Form'
 import Input from '../Inputs/Input'
 import { useFormik } from 'formik'
@@ -7,12 +7,18 @@ import { doCreateUserWithEmailAndPassword, doSignInWithGoogle } from '../../../f
 
 const RegisterForm = ({setVisibleForm}) => {
   
+  const [isRegistered, setIsRegistered] = useState({})
+
   const onSubmitHandler = async values => {
-    
-    console.log(values);
-    
+        
     try {
-      await doCreateUserWithEmailAndPassword(values.email, values.password); // Trigger Google sign-in
+      const res = await doCreateUserWithEmailAndPassword(values.email, values.password); // Trigger Google sign-in
+      setIsRegistered(res)
+      setTimeout(() => {
+        setVisibleForm('login')
+      },600)
+      console.log("res", res, values);
+      
       console.log("Google sign-in successful");
     } catch (error) {
       console.error("Error in Google sign-in:", error);
@@ -39,6 +45,9 @@ const RegisterForm = ({setVisibleForm}) => {
       <Input value={values.password} onChange={handleChange} name='password' error={errors.password} type="password" placeholder="Enter your Password"/>
       <Input value={values.confirmPassword} onChange={handleChange} name='confirmPassword' error={errors.confirmPassword} type="password" placeholder="Confirm Password"/>
       <button type='submit' onClick={handleSubmit} className="btn">Register</button>
+      {
+        Object.keys(isRegistered).length > 0 && (isRegistered?.user?.uid !== undefined ? <span className='text-sm'>Registered Successfully</span> : <span className='text-sm'>Unable to Create, please refresh and try again</span>)
+      }
     </Form>
   )
 }

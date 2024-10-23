@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem('loggedInUser'))
     if(savedData !== null && savedData !== undefined){
-      setIsLoogedIn(true)
+      setIsLoogedIn(savedData)
     }    
   },[])
 

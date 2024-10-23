@@ -11,13 +11,11 @@ const LoginForm = ({setVisibleForm}) => {
   const [isUser, setIsUser] = useState({})
 
   const onSubmitHandler = async e => {
-    console.log("Submited")
     try {
       const res = await doSignInWithEmailAndPassoword(e.email, e.password)
       setIsUser(res)
       localStorage.setItem('loggedInUser', JSON.stringify(res))
       window.location.href = '/'
-      console.log(res);
       
     } catch (error) {
       setIsUser(error)
@@ -25,9 +23,6 @@ const LoginForm = ({setVisibleForm}) => {
       
     }
   }
-
-  console.log("isUSer", isUser, isUser?.user?.metadata?.createdAt);
-  
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -46,7 +41,7 @@ const LoginForm = ({setVisibleForm}) => {
       <Input error={errors.password} onChange={handleChange} name="password" value={values.password} placeholder="Enter your password" type="password"/>
       <button type='submit' className="btn" onClick={handleSubmit}>Login</button>
       {
-        Object.keys(isUser)?.length >0  && (isUser?._tokenResponse?.registered ? <span>User Successfully Login</span> : <span>Invalid User</span>)
+        Object.keys(isUser)?.length >0  && (isUser?._tokenResponse?.registered ? <span className='text-sm'>User Successfully Login</span> : <span className='text-sm'>Invalid User</span>)
       }
     </Form>
   )

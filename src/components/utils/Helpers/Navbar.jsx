@@ -48,7 +48,7 @@ export default function Navbar({ isLoogedIn }) {
             <FaOpencart />
           </Link>
           {
-            isLoogedIn ? <span className='cursor-pointer' onClick={onSignOut}>Logout</span> : <Link to='user'>Login / Register</Link>
+            (isLoogedIn && Object.keys(isLoogedIn).length > 0) ? <span className='cursor-pointer' onClick={onSignOut}>Logout</span> : <Link to='user'>Login / Register</Link>
           }
         </div>
 
@@ -78,7 +78,7 @@ export default function Navbar({ isLoogedIn }) {
             <FaOpencart className='text-2xl' />
           </Link>
           {
-            isLoogedIn ? <span className='text-xl' onClick={onSignOut}>Logout</span> : <Link to='user' onClick={toggleMenu} className='text-xl'>Login / Register</Link>
+            (isLoogedIn && Object.keys(isLoogedIn).length > 0) ? <span className='text-xl' onClick={onSignOut}>Logout</span> : <Link to='user' onClick={toggleMenu} className='text-xl'>Login / Register</Link>
           }
         </div>
       </div>
