@@ -6,24 +6,30 @@ import { loginUserSchema } from '../../schemas'
 import { doSignInWithEmailAndPassoword } from '../../../firebase/auth'
 import { useDispatch } from 'react-redux'
 import { Loading } from '../../../redux/slices/settingSlice'
+import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
 
   const [isUser, setIsUser] = useState({})
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const onSubmitHandler = async e => {
     dispatch(Loading(true))
     try {
       const res = await doSignInWithEmailAndPassoword(e.email, e.password)
-      dispatch(Loading(false))
       setIsUser(res)
+      toast.success("Successfully Loggedin")
       localStorage.setItem('loggedInUser', JSON.stringify(res))
-      window.location.href = '/'
-      
+      setTimeout(() => {
+        dispatch(Loading(false))
+        window.location.href = '/'
+      },1500)      
     } catch (error) {
       dispatch(Loading(false))
+      toast.warn("Invalid Credentials")
       setIsUser(error)      
     }
   }

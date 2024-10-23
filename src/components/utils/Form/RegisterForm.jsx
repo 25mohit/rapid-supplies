@@ -6,6 +6,7 @@ import { registerUserSchema } from '../../schemas'
 import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
 import { useDispatch } from 'react-redux'
 import { Loading } from '../../../redux/slices/settingSlice'
+import { toast } from "react-toastify";
 
 const RegisterForm = ({setVisibleForm}) => {
   
@@ -19,6 +20,7 @@ const RegisterForm = ({setVisibleForm}) => {
       const res = await doCreateUserWithEmailAndPassword(values.email, values.password); // Trigger Google sign-in
       dispatch(Loading(false))
       setIsRegistered(res)
+      toast.success("Successfully Resigtered")
       setTimeout(() => {
         setVisibleForm('login')
       },600)
