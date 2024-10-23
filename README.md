@@ -43,7 +43,7 @@ This project is a simplified e-commerce product management application built usi
 - **Formik and Yup**: Used **Formik** for managing form states and **Yup** for form validation in the review modal.
 - **Firestore**: Stored reviews using Firebase Firestore (or a similar database solution).
 
-### 13. Admin Dashboard (Bonus Challenge)
+### 11. Admin Dashboard (Bonus Challenge)
 - **Admin Page**: Admins can manage products, including adding, editing, and deleting items. 
 - **MUI Data Table**: Used **MUI Data Table** for displaying products in the admin panel.
 - **Add Product & Category Forms**: Included forms for adding products and categories, with form validation using **Formik** and **Yup**.
