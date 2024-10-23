@@ -22,7 +22,7 @@ const Dashboard = () => {
             <Statistics heading="category" count={2}/>
             <Statistics heading="sold" count={30}/>
           </div>
-          <div className="controls flex items-center flex-col gap-2">
+          <div className="controls flex justify-center w-full md:w-fit items-center flex-col gap-2">
             <button className="btn" onClick={() => setShowAddForm(true)}><FaBoxOpen />Add new Product</button>
             <button className="btn" onClick={() => setShowCategory(true)}><FaRegStickyNote />Add new Category</button>
           </div>

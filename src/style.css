@@ -269,7 +269,6 @@
     width: 100%;
 }
 @media screen and (max-width: 756px){
-    
     .product-grid {
         display: flex;
         flex-direction: column;
@@ -280,7 +279,6 @@
     .navbar, .footer, .sect{
         padding: var(--padding-mobile);
     }
-    
     .form{
         min-width: 95vw;
         width: 95vw !important;
