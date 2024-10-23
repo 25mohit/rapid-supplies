@@ -66,6 +66,7 @@ This project is a simplified e-commerce product management application built usi
 - **Formik & Yup**: For form management and validation.
 - **lodash.debounce**: For optimizing the search functionality.
 - **React Spinners**: For displaying loading indicators.
+- **Fireworks.js**: For displaying Fireworks at the time of placing order in Cart.
 
 ## How to Run the Application
 
