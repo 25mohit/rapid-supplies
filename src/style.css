@@ -289,6 +289,10 @@
     .table{
         margin-top: 1rem;
     }
+    .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded{
+        background-color: orange !important;
+        width: calc(100vw - 4rem) !important;
+    }
     .css-x9kod7-MuiPaper-root, .table{
         width: calc(100vw - 4rem) !important;
     }
