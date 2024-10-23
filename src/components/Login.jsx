@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
-import { useAuth } from '../contexts/authContexts'
-import { doSignInWithEmailAndPassoword, doSignInWithGoogle } from '../firebase/auth'
-import { replace, useNavigate } from 'react-router-dom'
+import { doSignInWithEmailAndPassoword } from '../firebase/auth'
 
 const Login = () => {
     
     const [formData, setFormData] = useState({})
     const [isSignIn, setIsSignIn] = useState(false)
-
-    const navigate = useNavigate()
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
@@ -19,16 +15,6 @@ const Login = () => {
             } catch (error) {
                 console.log(error, error.code);  
             }
-        }
-    }
-
-    const onSignInWithGoogle = async (e) => {
-        e.preventDefault()
-        if(!isSignIn){
-            setIsSignIn(true)
-            await doSignInWithGoogle(formData.email, formData.password).catch(err => {
-                setIsSignIn(false)
-            })
         }
     }
 
