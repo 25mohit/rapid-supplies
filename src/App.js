@@ -1,10 +1,10 @@
 import './style.css'
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/utils/Helpers/Navbar';
 import NotFound from './components/Pages/NotFound';
 import Footer from './components/utils/Helpers/Footer';
 import Loader from './components/utils/Loader';
-import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from 'react-toastify';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { HashLoader } from 'react-spinners';
@@ -15,7 +15,6 @@ function App() {
   const NewLUser = lazy(() => import('./components/Pages/User'))
   const NewLDashboard = lazy(() => import('./components/Pages/Dashboard'), 2000)
   const NewLCart = lazy(() => import('./components/Pages/Cart'))
-
 
   const [isLoogedIn, setIsLoogedIn] = useState(false)
 
