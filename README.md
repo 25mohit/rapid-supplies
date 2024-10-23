@@ -13,3 +13,4 @@
 13. Review Functionality
 14. React-Toastify
 15. Suspend and Lazy Load
+16. Firebase Auth for Login and Register User
