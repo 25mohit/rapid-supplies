@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AuthWrapper from "../HOC/AuthWrapper"
 import Section from '../HOC/Section'
 import DataTable from '../utils/Table/Table'
 import Statistics from '../utils/Cards/Statistics'
 import { FaBoxOpen } from "react-icons/fa";
 import { FaRegStickyNote } from "react-icons/fa";
+import ProductAdd from '../utils/Form/ProductAdd'
+import CategoryAdd from '../utils/Form/CategoryAdd'
 
 const Dashboard = () => {
+  
+  const [showAddForm, setShowAddForm] = useState(false)
+  const [showCategory, setShowCategory] = useState(false)
+  console.log("showAddForm", showAddForm);
   
   return (
     <AuthWrapper>
@@ -18,15 +24,26 @@ const Dashboard = () => {
             <Statistics heading="sold" count={30}/>
           </div>
           <div className="controls flex items-center flex-col gap-2">
-            <button className="btn"><FaBoxOpen />Add new Product</button>
-            <button className="btn"><FaRegStickyNote />Add new Category</button>
+            <button className="btn" onClick={() => setShowAddForm(true)}><FaBoxOpen />Add new Product</button>
+            <button className="btn" onClick={() => setShowCategory(true)}><FaRegStickyNote />Add new Category</button>
           </div>
         </header>
-        <div className="table w-full p-1 bg-blue-100 rounded-md h-full">
-          
+        <div className="table p-1 bg-blue-100 rounded-md h-full"> 
           <DataTable />
         </div>
       </Section>
+      {
+        showAddForm && <>
+          <div className="overlay" onClick={() => setShowAddForm(false)}></div>
+          <ProductAdd />
+        </>
+      }
+      {
+        showCategory && <>
+          <div className="overlay" onClick={() => setShowCategory(false)}></div>
+          <CategoryAdd />
+        </>
+      }
     </AuthWrapper>
   )
 }

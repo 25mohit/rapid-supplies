@@ -14,7 +14,7 @@ const ReviewList = ({ data, setReviewListData }) => {
         <div>
             {
                 data?.map((elem, index) =>
-                    <div key={index} className='flex items-center gap-3 mb-2 border-b-2 pb-3'>
+                    <div key={index} className='flex items-center gap-3 mb-2 review-row'>
                         <Reviews rating={elem?.star}/>
                         <div className='flex flex-col text-left'>
                             <span className='font-bold' title="Review Title">{elem?.review}</span>

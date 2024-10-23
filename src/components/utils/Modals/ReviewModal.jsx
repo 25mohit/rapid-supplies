@@ -59,7 +59,7 @@ const ReviewModal = ({ data }) => {
       <span className='flex items-center gap-1'>
         <input type="checkbox" name="termsAccepted" checked={values.termsAccepted} onChange={() => setFieldValue('termsAccepted', !values.termsAccepted)} id="accept" />
         {
-          errors?.termsAccepted ? <label htmlFor='accept' className='text-sm text-red-700 font-bold'>{errors.termsAccepted}</label> :
+          errors?.termsAccepted ? <label htmlFor='accept' className='text-sm text-red-500 font-bold'>{errors.termsAccepted}</label> :
           <label htmlFor="accept" className='text-sm'>I accept the <b>terms and conditions</b></label>
         }
       </span>
