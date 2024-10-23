@@ -24,7 +24,6 @@ const Cart = () => {
     const placeOrderHandler = () => {
       setShowFirework(true)
       const fireworks = new Fireworks(container, { /* options */ })
-      console.log(container);
       fireworks.start()
     }
     

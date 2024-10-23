@@ -1,11 +1,8 @@
-"use client";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FaOpencart } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
-import { doSignOut } from '../../../firebase/auth';
 
 const navbarOption = [
   { label: 'Home', route: '/' },

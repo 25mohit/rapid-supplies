@@ -15,7 +15,7 @@ const User = () => {
             <span className={`cursor-pointer text-gray-400 ${visibleForm === 'register' ? 'active' : ''}`} onClick={() => setVisibleForm('register')}>Register</span>
         </div>
         {
-            visibleForm === 'login' ? <LoginForm setVisibleForm={setVisibleForm}/> : <RegisterForm setVisibleForm={setVisibleForm}/>
+            visibleForm === 'login' ? <LoginForm /> : <RegisterForm setVisibleForm={setVisibleForm}/>
         }
       </div>
     </Section>

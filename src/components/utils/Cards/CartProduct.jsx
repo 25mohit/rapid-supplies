@@ -9,9 +9,7 @@ import { motion } from 'framer-motion';
 const CartProduct = ({ data }) => {
     const dispatch = useDispatch()
     
-    const removeItemFromCart = () => {
-        console.log(data);
-        
+    const removeItemFromCart = () => {        
         dispatch(RemoveFromCart(data))
     }
 

@@ -4,23 +4,27 @@ import Input from '../Inputs/Input'
 import { useFormik } from 'formik'
 import { loginUserSchema } from '../../schemas'
 import { doSignInWithEmailAndPassoword } from '../../../firebase/auth'
-import moment from 'moment/moment'
+import { useDispatch } from 'react-redux'
+import { Loading } from '../../../redux/slices/settingSlice'
 
-const LoginForm = ({setVisibleForm}) => {
+const LoginForm = () => {
 
   const [isUser, setIsUser] = useState({})
 
+  const dispatch = useDispatch()
+
   const onSubmitHandler = async e => {
+    dispatch(Loading(true))
     try {
       const res = await doSignInWithEmailAndPassoword(e.email, e.password)
+      dispatch(Loading(false))
       setIsUser(res)
       localStorage.setItem('loggedInUser', JSON.stringify(res))
       window.location.href = '/'
       
     } catch (error) {
-      setIsUser(error)
-      console.log(error);
-      
+      dispatch(Loading(false))
+      setIsUser(error)      
     }
   }
 

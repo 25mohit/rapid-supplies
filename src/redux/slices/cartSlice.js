@@ -44,11 +44,9 @@ const CartSlice = createSlice({
         })
         builder.addCase(RemoveFromCart.fulfilled, (state, action) => {
             const payload = action.payload;
-            console.log(payload, state.cartList);
             state.cartList = state.cartList.filter(d => d.id !== payload.id)
         })
         builder.addCase(ClearCart.fulfilled, (state, action) => {
-            const payload = action.payload;
             state.cartList = []
         })
     }

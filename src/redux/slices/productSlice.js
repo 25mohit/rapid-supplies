@@ -1,10 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ProductsList } from "../../moc_data/Products";
 import {Loading} from './settingSlice'
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const FetchProducts = createAsyncThunk("FetchProducts", async (payload, { dispatch }) => {
+export const FetchProducts = createAsyncThunk("FetchProducts", async (_, { dispatch }) => {
     dispatch(Loading(true))
     try {
         const data = await axios.get('https://resume-backend-production.up.railway.app/products')
@@ -12,7 +11,6 @@ export const FetchProducts = createAsyncThunk("FetchProducts", async (payload, {
         return data?.data?.data
     } catch (error) {
         dispatch(Loading(false))
-        console.log(error);
     }
     
 })
@@ -70,8 +68,6 @@ const ProductSlice = createSlice({
                 }
             })
             state.productList = newList
-            console.log("newList", state.productList, newList, payload)
-            // state.productList 
         })
 
     }

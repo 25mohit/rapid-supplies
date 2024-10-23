@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaStar } from 'react-icons/fa6';
 import { IoMdClose } from "react-icons/io";
 import Reviews from '../Reviews';
 

@@ -12,7 +12,6 @@ const Dashboard = () => {
   
   const [showAddForm, setShowAddForm] = useState(false)
   const [showCategory, setShowCategory] = useState(false)
-  console.log("showAddForm", showAddForm);
   
   return (
     <AuthWrapper>

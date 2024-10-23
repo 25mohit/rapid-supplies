@@ -9,7 +9,6 @@ import { useFormik } from 'formik'
 
 const ReviewModal = ({ data }) => {
 
-  console.log("data", data);
   const [rating, setRating] = useState(0)
   
   const dispatch = useDispatch()
@@ -34,9 +33,6 @@ const ReviewModal = ({ data }) => {
     onSubmit: onSubmitHandler,
     validateOnChange: false
   })
-
-
-  console.log("errors",errors);
   
   return (
     <div className='fixed h-fit p-4 review-modal shadow-lg rounded-lg gap-3 flex flex-col'>

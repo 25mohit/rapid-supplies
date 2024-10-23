@@ -3,25 +3,27 @@ import Form from '../../Layout/Form'
 import Input from '../Inputs/Input'
 import { useFormik } from 'formik'
 import { registerUserSchema } from '../../schemas'
-import { doCreateUserWithEmailAndPassword, doSignInWithGoogle } from '../../../firebase/auth'
+import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
+import { useDispatch } from 'react-redux'
+import { Loading } from '../../../redux/slices/settingSlice'
 
 const RegisterForm = ({setVisibleForm}) => {
   
   const [isRegistered, setIsRegistered] = useState({})
 
+  const dispatch = useDispatch()
+
   const onSubmitHandler = async values => {
-        
+    dispatch(Loading(true))
     try {
       const res = await doCreateUserWithEmailAndPassword(values.email, values.password); // Trigger Google sign-in
+      dispatch(Loading(false))
       setIsRegistered(res)
       setTimeout(() => {
         setVisibleForm('login')
       },600)
-      console.log("res", res, values);
-      
-      console.log("Google sign-in successful");
     } catch (error) {
-      console.error("Error in Google sign-in:", error);
+      dispatch(Loading(false))
     }
 
   }

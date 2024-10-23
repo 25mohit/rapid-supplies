@@ -20,7 +20,7 @@ const List = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if(!productsList?.length || productsList == undefined || productsList == null){
+    if(!productsList?.length || productsList === undefined || productsList === null){
       dispatch(FetchProducts())
     }
   },[])
