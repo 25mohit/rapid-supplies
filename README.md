@@ -43,6 +43,7 @@ This project is a simplified e-commerce product management application built usi
 
 ### 11. Review System (Bonus Challenge)
 - **Review Modal**: Users can leave ratings and comments on products via a review modal.
+- **Admin Pannel**: Admins can add new Products and add new Category.
 - **Formik and Yup**: Used **Formik** for managing form states and **Yup** for form validation in the review modal.
 - **Firestore**: Stored reviews using Firebase Firestore (or a similar database solution).
 
