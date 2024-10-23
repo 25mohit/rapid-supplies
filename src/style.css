@@ -39,10 +39,8 @@
     transform: translate(-50%, -50%);
 }
 .input{
-    /* background-color: red; */
     border: 1px solid var(--color-primary);
     height: var(--field-height);
-    /* padding: 0.1rem; */
 }
 .input label{
     top: 50%;
@@ -268,6 +266,9 @@
     justify-content: center;
     /* pointer-events: none; */
 }
+.table{
+    width: 100%;
+}
 @media screen and (max-width: 756px){
     
     .product-grid {
@@ -288,7 +289,7 @@
     .table{
         margin-top: 1rem;
     }
-    .css-x9kod7-MuiPaper-root{
+    .css-x9kod7-MuiPaper-root, .table{
         width: calc(100vw - 4rem) !important;
     }
     .product-grid {
