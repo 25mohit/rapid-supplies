@@ -10,44 +10,40 @@ This project is a simplified e-commerce product management application built usi
 - **Loading State**: Implemented loading indicators using **React Spinners** while data is being fetched.
 - **Add to Cart**: Each product includes an "Add to Cart" button to add products to the shopping cart.
 
-### 2. Filtering Products
-- **Category-based Filtering**: Users can filter products by category (e.g., Electronics, Clothing, Home).
-- **React Query**: Integrated **React Query** to manage server state and cache products, streamlining data fetching.
-
-### 3. Shopping Cart
+### 2. Shopping Cart
 - **Cart Section**: Created a shopping cart to display products added, manage quantities, and calculate the total price.
 - **State Management**: Used **Redux** with **Redux-Toolkit** and **Redux Persist** to manage cart state and maintain persistence across sessions.
 
-### 4. Transitions and Animations
+### 3. Transitions and Animations
 - **Framer Motion**: Implemented smooth transitions for adding and removing items from the cart.
 - **React Spring**: Enhanced user interaction with additional animations during transitions.
 
-### 5. Data Fetching with Suspense
+### 4. Data Fetching with Suspense
 - **React 18 Suspense**: Used React's Suspense for handling loading states and lazy loading product data.
 
-### 6. Responsive Design
+### 5. Responsive Design
 - **Tailwind CSS**: The app is styled using **Tailwind CSS** to ensure responsive design across devices.
 - **Material-UI (MUI)**: Integrated MUI components for styling and layouts.
   
-### 7. Search Functionality
+### 6. Search Functionality
 - **Search Bar with Debouncing**: Implemented a search bar that filters products in real-time using **lodash.debounce** for performance optimization.
 
-### 8. User Authentication
+### 7. User Authentication
 - **Firebase Authentication**: Used **Firebase Auth** to implement login and register functionality for user sessions.
 
-### 9. Persistent Cart
+### 8. Persistent Cart
 - **Redux Persist**: Shopping cart state is saved using Redux Persist, ensuring cart data persists across sessions.
 
-### 10. Notifications
+### 9. Notifications
 - **React-Toastify**: Implemented notifications to enhance user experience for actions like adding products to the cart or handling errors.
 
-### 11. Review System (Bonus Challenge)
+### 10. Review System (Bonus Challenge)
 - **Review Modal**: Users can leave ratings and comments on products via a review modal.
 - **Admin Pannel**: Admins can add new Products and add new Category.
 - **Formik and Yup**: Used **Formik** for managing form states and **Yup** for form validation in the review modal.
 - **Firestore**: Stored reviews using Firebase Firestore (or a similar database solution).
 
-### 12. Admin Dashboard (Bonus Challenge)
+### 13. Admin Dashboard (Bonus Challenge)
 - **Admin Page**: Admins can manage products, including adding, editing, and deleting items. 
 - **MUI Data Table**: Used **MUI Data Table** for displaying products in the admin panel.
 - **Add Product & Category Forms**: Included forms for adding products and categories, with form validation using **Formik** and **Yup**.
