@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 const navbarOption = [
   { label: 'Home', route: '/' },
-  { label: 'About us', route: '/' },
   { label: 'Dashboard', route: '/dashboard' },
 ]
 export default function Navbar({ isLoogedIn }) {
