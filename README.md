@@ -73,3 +73,10 @@ This project is a simplified e-commerce product management application built usi
    ```bash
    git clone https://github.com/yourusername/your-repository.git
    cd your-repository
+   ```
+   ```bash
+   npm install
+   ```
+   ```bash
+   npm start
+   ```
